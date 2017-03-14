@@ -1,0 +1,115 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mathtools,amsfonts,amssymb,amsmath, bm,commath,multicol}
+\usepackage{algorithmicx, tkz-graph, algorithm, fancyhdr, pgfplots}
+\usepackage{fancyvrb}
+
+\usepackage[noend]{algpseudocode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{27/2/2017 ::: Nandan Rao}
+\lhead{Machine Learning ::: Problemset 3}
+\rfoot{\thepage}
+
+
+\DefineVerbatimEnvironment{juliaout}{Verbatim}{}
+\DefineVerbatimEnvironment{juliacode}{Verbatim}{fontshape=sl, fontsize=\tiny}
+\DefineVerbatimEnvironment{juliaterm}{Verbatim}{}
+
+
+\begin{document}
+
+\section*{Problem 13}
+We begin with the naive solution, writing down our most explicit objective:
+
+\begin{align*}
+\text{Maximize }  &\null \gamma  \\
+\text{s.t. } &\null  \frac{y_iw^Tx_i}{||w||} \geq \gamma
+\end{align*}
+%
+We observe that the scaling factor $||w||$ could instead be applied directly to $\gamma$:
+w\begin{align*}
+\text{Maximize }  &\null \frac{\gamma}{||w||}  \\
+\text{s.t. } &\null  y_iw^Tx_i \geq \gamma
+\end{align*}
+%
+Which brings us nicely to the realization that we could remove $\gamma$ altogether, replacing it with with a constant, and focus intead on maximizing only the scaling factor $\frac{1}{||w||}$, or conversely minimizing the norm:
+\begin{align*}
+\text{Minimize }  &\null ||w||^2  \\
+\text{s.t. } &\null  y_iw^Tx_i \geq 1
+\end{align*}
+%
+We solve the Lagrangian duel, imposing lagrangian multipliers $\alpha$ for each point to constrain them on the correct side of the margins. The dual and the solution:
+\begin{align*}
+\text{Maximize}  &\null \sum_i^n \alpha_i - \frac{1}{2}\sum_{i,j}^n y_iy_j\alpha_i \alpha_j x_i^Tx_j\\
+\text{s.t. } &\null  \alpha_i \geq 0 \\
+  &\null \sum_{i}^n\alpha_iy_i = 0
+\end{align*}
+Here we see the curious fact of the support vectors. The constraints in their lagrangian form ($\alpha$) will only be active, naturally, for the data points which lie on the margin. Everything else will not need any constraints, and hence the $\alpha$ corresponding to that point will be zero. This is to say that our final $w*$ is defined by the following portion of our objective function:
+\begin{align*}
+\sum_{i,j \in S}^n y_iy_j\alpha_i \alpha_j x_i^Tx_j\\
+\end{align*}
+%
+Where S is the set of points which lie on the margins. It is clear to see here that this is a linear product of scalar products of all the data points in S, hence, within the vector space spanned by those points.
+\section*{Problem 14}
+
+\subsubsection*{Kernel Function}
+
+\begin{align*}
+K(x,y) &= \langle \Phi(x), \Phi(y) \rangle \\
+K(x,y) &= \sum_{n=0}^{\infty} \frac{1}{\sqrt{n!}}x^ne^{-x^2/2}\frac{1}{\sqrt{n!}}y^ne^{-y^2/2} \\
+K(x,y) &= e^{-x^2/2}e^{-y^2/2} \sum_{n=0}^{\infty} \frac{1}{n!}(xy)^n \\
+K(x,y) &=  e^{-x^2/2}e^{-y^2/2}e^{xy} \\
+K(x,y) &=  e^{xy - x^2/2 -y^2/2} \\
+K(x,y) &=  e^{\frac{1}{2}(x - y)(y - x)} \\
+K(x,y) &=  e^{- \frac{1}{2}(x - y)^2}
+\end{align*}
+
+\subsubsection*{Kernel in $\mathbb{R}^d$}
+Recognizing gaussianity when we see it, an easy choice is the multivariate flavor:
+\begin{align*}
+K(X,Y) &=  e^{- \frac{1}{2}(X - Y)^T(X - Y)}
+\end{align*}
+
+\subsubsection*{Corresponding Feature Map}
+
+We begin by rewriting our Kernel function:
+\begin{align*}
+K(X,Y) &=  e^{X^TY - ||X||^2/2 - ||Y||^2/2}
+\end{align*}
+%
+This allows us to more easily see the component parts:
+\begin{align*}
+\Phi(X) &= \frac{1}{\sqrt{n!}}||X||^n e^{-\frac{1}{2}||X||^2}
+\end{align*}
+
+\section*{Problem 15}
+
+\subsubsection*{Product of Two Kernels}
+
+\begin{align*}
+K_1K_2 &= \langle \Phi_1(x), \Phi_1(y) \rangle \langle \Phi_2(x), \Phi_2(y) \rangle \\
+K_1K_2 &= \sum_{i=0}^{\infty} \Phi_1(x)_i\Phi_1(y)_i \sum_{j=0}^{\infty} \Phi_2(x)_j\Phi_2(y)_j \\
+K_1K_2 &= \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} \Phi_1(x)_i\Phi_1(y)_i\Phi_2(x)_j\Phi_2(y)_j
+\end{align*}
+We can therefore define a new feature map:
+\begin{align*}
+\Phi_3(x) &= \Phi_i(x) \sum_{j=0}^{\infty} \Phi_j(x)
+\end{align*}
+And we have a scalar product:
+\begin{align*}
+K_1K_2 &= \sum_{i=0}^{\infty} \Phi_3(x)_i\Phi_3(y)_i \\
+K_1K_2 &= \langle \Phi_3(x), \Phi_3(y) \rangle
+\end{align*}
+
+\subsubsection*{Sum of Two Kernels}
+
+\begin{align*}
+K_1 + K_2 &= \langle \Phi_1(x), \Phi_1(y) \rangle + \langle \Phi_2(x), \Phi_2(y) \rangle \\
+K_1 + K_2 &= \sum_{i=0}^{\infty} \Phi_1(x)_i\Phi_1(y)_i + \sum_{j=0}^{\infty} \Phi_2(x)_j\Phi_2(y)_j
+\end{align*}
+Here we see that this is simply the inner product of the two vectors concatenated together, so the corresponding new feature map can be defined as such, proving that this is indeed a valid kernel:
+\begin{align*}
+\Phi_3(x) &= \big[ \Phi_1(x) \ \Phi_2(x) \big]
+\end{align*}
+\end{document}

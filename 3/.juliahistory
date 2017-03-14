@@ -1,0 +1,417 @@
+generate_size(100, 3)
+maximum(generate_size(100, 3))
+using base.Test
+using Base.Test
+dim
+dims
+size
+filter
+X = generate_X(100,3)
+X = generate_X(100,3)
+X = generate_X(100,3)[1,]
+X = generate_X(100,3)[1,:]
+label_X(X)
+label_X(X)
+label_X(X)
+X
+X = generate_X(100,3)[1]
+X = generate_X(100,3)
+label_X(X)
+label_X(X)
+label_X(X)
+label_X(X)
+label_X(X)
+label_X(X)
+label_X(X)
+[1,2,3][1,1]
+[1,2,3][1,:]
+[1,2,3][:, 1]
+size([1,2,3])
+size([1,2,3])[2]
+size([1 2 3; 1 2 3])
+[1 2 3; 1 2 3]
+X
+get_edges(X)
+get_edges([1 1 1; 0 0 0 ])
+get_edges([1 1 1; 0 0 -1])
+get_edges([1 1; 0 -1])
+length(X)
+get_indices(X, label_X(X))
+get_indices(X, label_X(X))
+get_indices(X, label_X(X))
+get_indices(X, label_X(X))
+get_edges(get_ones(X, label_X(X)))
+get_ones(X, label_X(X))
+size(get_ones(X, label_X(X)))[2]
+size(get_ones(X, label_X(X)))[2]
+get_ones(X, label_X(X))
+get_ones(X, label_X(X))
+get_ones(X, label_X(X))
+get_edges(get_ones(X, label_X(X)))
+e = get_edges(get_ones(X, label_X(X)))
+[y[i] for y in x, i in 1:3]
+[y[i] for y=e, i=1:3]
+[y[i] for y=e, i=1:2]
+cube_classifier(X)
+cube_classifier(X)
+cube_classifier(X)
+min, max = (1,2)
+min
+max
+train_cub_classifier(X)
+corners = train_cube_classifier(X)
+corners = train_cube_classifier(X)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_cube_classifier(generate_X(400,3), corners)
+test_rect_row([0.9,0.0], [(0,1), (1,-1)])
+test_rect_row([0.9,0.0], [(0,1), (1,-1)])
+generate_and_test(100, 100, 3)
+generate_and_test(100, 1000, 3)
+generate_and_test(100, 10000, 3)
+generate_and_test(100, 100, 3)
+generate_and_test(1000, 100, 3)
+generate_and_test(10000, 100, 3)
+generate_and_test(10000, 1000, 3)
+generate_and_test(10000, 10000, 3)
+generate_and_test(10000, 1000, 3)
+generate_and_test(10000, 1000, 5)
+generate_and_test(10000, 1000, 10)
+generate_and_test(10000, 1000, 100)
+generate_and_test(10000, 1000, 100)
+generate_and_test(10000, 1000, 100)
+generate_and_test(10000, 1000, 100)
+generate_and_test(10000, 100, 100)
+generate_and_test(10000, 100, 100)
+generate_and_test(10000, 100, 100)
+generate_and_test(10000, 100, 100)
+generate_and_test(10000, 100, 10)
+generate_and_test(10000, 100, 10)
+generate_and_test(10000, 100, 10)
+generate_and_test(10000, 100, 10)
+generate_and_test(10000, 100, 100)
+generate_and_test(10000, 100, 1000)
+generate_and_test(10000, 100, 1000)
+generate_and_test(1000, 100, 1000)
+generate_and_test(100, 100, 1000)
+generate_and_test(100, 1000, 1000)
+generate_and_test(100, 10000, 1000)
+generate_and_test(100, 10000, 10)
+generate_and_test(100, 10000, 10)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 10000, 2)
+generate_and_test(100, 1000, 2)
+generate_and_test(100, 1000, 2)
+generate_and_test(100, 1000, 2)
+generate_and_test(100, 1000, 10)
+generate_and_test(100, 1000, 100)
+generate_and_test(100, 1000, 100)
+generate_and_test(100, 1000, 1000)
+generate_and_test(100, 100, 1000)
+generate_and_test(100, 100, 100)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 10)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 100, 100)
+generate_and_test(1000, 1000, 1000)
+generate_and_test(1000, 1000, 1000)
+generate_and_test(1000, 1000, 1000)
+generate_and_test(1000, 1000, 10)
+generate_and_test(1000, 1000, 10)'
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)[:]
+plot_increasing_dimensions(1000, 100, 20, 10)[:]
+p = plot_increasing_dimensions(1000, 100, 20, 10)
+?reshape
+reshape(p, (100, 2))
+[a*b for a in p, b in p]
+[a.*b for a in p, b in p]
+[[a b] for a in p, b in p]
+[b for a in p for b in a]
+p
+[b for a in p for b in a]
+flatten
+Base.flatten
+?Base.flatten
+Base.flatten(p)
+collect(Base.flatten(p))
+plot_increasing_dimensions(1000, 100, 20, 10)[:]
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+mean(rand(2,2))
+?mean
+mean(rand(2,2), 1)
+mean(rand(2,2), 2)
+mean(rand(2,2), 2)
+mean(rand(2,2), 2)
+mean(rand(2,2), 2)
+mean(rand(2,2), 2)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+plot_increasing_dimensions(1000, 100, 20, 10)
+generate_and_test(100, 100, 3)
+using DataFrames
+generate_and_test(100, 100, 3)
+generate_and_test(100, 100, 3)
+generate_and_test(100, 100, 3)
+[generate_and_test(N_test, N_train, d)' for _ in 1:K]
+[generate_and_test(N_test, N_train, d)' for _ in 1:10]
+[generate_and_test(10, 10, d)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+[generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+DataFrame(cube = 1, rect = 3)
+stack(DataFrame(cube = 1, rect = 3))
+stack(DataFrame(cube = 1, rect = 3), [:cube, :rect])
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+?rename
+generate_and_test(10, 10, 3)
+?DataFrame
+?DataFrame
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+DataFrame(1:4, [:foo, :bar])
+DataFrame(1:4, ["foo", "bar"])
+DataFrame(A = 1:4, B = ["foo", "bar"])
+DataFrame(A = 1:2, B = ["foo", "bar"])
+DataFrame(A = 1:2, B = ["foo", "bar"])
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+generate_and_test(10, 10, 3)
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+a
+[DataFrame(Error = e, Classifier = ["Cube", "Rectangle"]) for e in a]
+reduce(vcat, [DataFrame(Error = e, Classifier = ["Cube", "Rectangle"]) for e in a])
+r = reduce(vcat, [DataFrame(Error = e, Classifier = ["Cube", "Rectangle"]) for e in a])
+aggregate(r, :Classifier, mean)
+a
+reduce(vcat, a)
+reduce(vcat, a')
+a = [generate_and_test(10, 10, 3)' for _ in 1:10]
+reduce(vcat, a)
+mean(reduce(vcat, a), 1)
+mean(reduce(vcat, a), 2)
+mean(reduce(vcat, a), 1)
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+mean(reduce(vcat, a), 1)
+plot_increasing_dimensions(100, 100, 3, 10)
+a = [generate_and_test(10, 10, 3) for _ in 1:10]
+mean_trials(x -> generate_and_test(10, 10, 3), 10)
+mean_trials(() -> generate_and_test(10, 10, 3), 10)
+plot_increasing_dimensions(100, 100, 3, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+plot_increasing_dimensions(100, 100, 5, 10)
+r = plot_increasing_dimensions(100, 100, 5, 10)
+r
+r[1]
+r[1,:]
+r[:,1]
+r = plot_increasing_dimensions(100, 100, 5, 10)
+DataFrame(r)
+stack(DataFrame(r), [:]
+stack(DataFrame(r), [:x1, :x2])
+format_results(r)
+r = plot_increasing_dimensions(100, 100, 5, 10)
+r = plot_increasing_dimensions(100, 100, 100, 100)
+r = plot_increasing_dimensions(100, 100, 100, 100)
+r = plot_increasing_dimensions(100, 100, 100, 30)
+plotter(r)
+using Gadfly
+plotter(r)
+set_default_plot_size(9inch, 7inch)
+plotter(r)
+plotter(increasing_dimensions(100, 100, 100, 30))
+plotter(increasing_dimensions(100, 100, 100, 30))
+plotter(increasing_dimensions(1000, 10, 100, 30))
+plotter(increasing_dimensions(1000, 10, 100, 30))
+plotter(increasing_dimensions(300, 10, 100, 30))
+generate_X(10, 3)
+[1 2 3; 4 5 6]
+[1 2 3; 4 5 6]
+plotter(increasing_dimensions(1000, 100, 100, 30))
+plotter(increasing_dimensions(1000, 50, 30, 40))
+X = generate_X(100, 4)
+Y = label_X(X, should_be_one)
+get_edges(get_ones(X, Y))
+get_corners(get_edges(get_ones(X, Y)))
+get_corners(get_edges(get_ones(X, Y)))
+get_edges(get_ones(X, Y))
+plotter(increasing_dimensions(1000, 50, 30, 40))
+plotter(increasing_dimensions(1000, 50, 30, 40))
+plotter(increasing_dimensions(100, 50, 30, 40))
+plotter(increasing_dimensions(100, 50, 30, 40))
+get_corners(get_edges(get_ones(X, Y)))
+X = generate_X(100, 120)
+Y = label_X(X, should_be_one)
+get_corners(get_edges(get_ones(X, Y)))
+plotter(increasing_dimensions(100, 50, 30, 40))
+plotter(increasing_dimensions(500, 50, 30, 40))
+d
+plotter(increasing_dimensions(500, 50, 30, 40))
+X
+Y
+cube_classifier(X, Y)
+cube = cube_classifier(X, Y)
+X
+X_test = generate_X(100, 120)
+Y_test = label_X(X_test, should_be_one)
+test_classifier(X_test, Y_test, cube)
+test_classifier(X_test, Y_test, cube)
+plotter(increasing_dimensions(500, 50, 100, 40))
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 10)
+generate_and_test(100, 100, 100)
+generate_and_test(100, 100, 100)
+generate_and_test(100, 100, 100)
+generate_and_test(100, 100, 100)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)\
+min
+max
+min = -100
+max = 100
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+generate_and_test(100, 100, 500)
+test_classifier(X_test, Y_test, cube)
+test_classifier(X_test, Y_test, cube)
+X_test = generate_X(100, 120)
+Y_test = label_X(X_test, should_be_one)
+test_classifier(X_test, Y_test, cube)
+X_test = generate_X(1000, 120)
+Y_test = label_X(X_test, should_be_one)
+test_classifier(X_test, Y_test, cube)
+X_test = generate_X(1000, 120)
+Y_test = label_X(X_test, should_be_one)
+test_classifier(X_test, Y_test, cube)
+X_test = generate_X(1000, 120)
+Y_test = label_X(X_test, should_be_one)
+test_classifier(X_test, Y_test, cube)
+test_classifier(X_test, Y_test, cube)
+test_classifier(X_test, Y_test, cube)
+plotter(increasing_dimensions(500, 100, 200, 25))
+increasing_dimensions(100,10,6,6)
+increasing_dimensions(100,10,6,6)
+increasing_dimensions(100,10,6,6)
+increasing_dimensions(100,100,6,6)
+increasing_dimensions(100,100,6,6)
+increasing_dimensions(100,100,6,6)
+increasing_dimensions(100,100,6,6)
+r = increasing_dimensions(100,100,6,6)
+DataFrame(r)
+DataFrame(r, [:foo, :bar, :baz])
+names!(DataFrame(r), [:foo, :bar, :baz]
+)
+?stack
+format_results(r)
+r
+format_results(r)
+format_results(r)
+plotter(increasing_sample(100, 10, 1000, 40))
+plotter(increasing_sample(100, 10, 1000, 40))
+plotter(increasing_sample(100, 10, 1000, 40, 50))
+plotter(increasing_sample(100, 10, 1000, 40, 50), "Training Size")
+plotter(increasing_dimensions(500, 100, 200, 25), "Dimensions")

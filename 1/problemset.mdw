@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mathtools,amsfonts,amssymb,amsmath, bm,commath,multicol}
+\usepackage{algorithmicx, tkz-graph, algorithm, fancyhdr}
+
+\usepackage[noend]{algpseudocode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{19/1/2017 || Nandan Rao}
+\lhead{Machine Learning || Problemset 1}
+\rfoot{\thepage}
+
+\begin{document}
+
+
+
+\section{}
+
+<<>>=
+
+@
+
+\section{}
+
+Using the exponent rules $e^x \geq 1 + x$ and the provided $e^-x \leq 1 - x + \frac{x^2}{2}$, we work some magic after multiplying both sides of the inequality in our original probability by -1, so that we can apply Markov's rule, and assuming continuity so that $p(x > y) = p(x \geq y)$:
+\begin{align*}
+p\bigg( \frac{-1}{n} \sum X_i > t - m \bigg) &\leq \frac{ \mathbb{E}[ \frac{-1}{n} \sum X_i] }{t-m} \\
+p\bigg( e^{{\frac{-\lambda}{n} \sum X_i}} > e^{\lambda(t - m)} \bigg) &\leq \frac{ \mathbb{E}[ e^{\frac{-\lambda}{n} \sum X_i} ] }{e^{\lambda(t-m)}} \\
+&\leq \frac{ \mathbb{E}[e^{\frac{-\lambda}{n} X_i}]^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \mathbb{E}[1 + \frac{\lambda^2X_1^2}{2n^2} - \frac{\lambda X_1}{n^2}]^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \bigg( 1 + \frac{\lambda^2a^2}{2n^2} - \frac{\lambda m}{n^2} \bigg)^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \bigg( \exp{ \bigg\{ \frac{\lambda^2a^2}{2n^2} - \frac{\lambda m}{n} \bigg\}} \bigg)^n}{e^{\lambda(t-m)}} \\
+&\leq \exp{ \bigg\{ \frac{\lambda^2a^2}{2n} - \lambda m  - \lambda(t - m)\bigg\} } \\
+&\leq \exp{ \bigg\{ \frac{\lambda^2a^2}{2n} - \lambda t  \bigg\} } \\
+\end{align*}
+Here we minimize with respect to $\lambda$:
+\begin{align*}
+
+\end{align*}
+and blah
+\end{document}

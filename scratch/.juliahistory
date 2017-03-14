@@ -1,0 +1,270 @@
+?con
+?cons
+?cond
+?cond
+using Distributions
+rand(Normal(), 10, 5)
+m = rand(Normal(), 10, 5)
+m
+cond(m)
+get_conditions()
+get_conditions()
+get_conditions()
+get_conditions()
+plot(get_conditions(100), Geom.histogram)
+plot(x = get_conditions(100), Geom.histogram)
+plot(x = get_conditions(100), Geom.density)
+plot(x = get_conditions(100, 100, 5), Geom.density)
+plot(x = get_conditions(100, 50, 10), Geom.density)
+plot(x = get_conditions(100, 40, 10), Geom.density)
+plot(x = get_conditions(200, 40, 10), Geom.density)
+plot(x = get_conditions(500, 40, 10), Geom.density)
+plot(x = get_conditions(1000, 40, 10), Geom.density)
+plot(x = get_conditions(1000, 30, 10), Geom.density)
+plot(x = get_conditions(1000, 20, 10), Geom.density)
+plot(x = get_conditions(1000, 10, 10), Geom.density)
+plot(x = get_conditions(1000, 11, 10), Geom.density)
+get_max()
+max([1,2,3])
+?max
+get_conditions()
+get_max()
+plot(x = get_max(), Geom.density)
+plot(x = get_max(), y = 5:1:100)
+plot(y = get_max(), x = 5:1:100, Geom.line)
+plot(y = get_max(10:2:50), x = 10:2:50, Geom.line)
+plot(y = get_max(12:2:50), x = 12:2:50, Geom.line)
+ntile
+percentile
+?quartile
+quartile
+prctile
+percentile
+?percentile
+quantile
+?quantile
+quantile(get_conditions(), .9)
+c = get_conditions(100)
+quartile(c, .9)
+quantile(c, .9)
+plot(y = get_max(12:50), x = 12:50, Geom.line)
+plot(y = get_max(12:100), x = 12:100, Geom.line)
+p = plot(y = get_max(12:100), x = 12:100, Geom.line)
+draw(SVG("plot.svg", 4inch, 4inch), p)
+draw(PNG("plot.png", 4inch, 4inch), p)
+draw(PNG("plot.png", 4inch, 6inch), p)
+draw(PNG("plot.png", 5inch, 5inch), p)
+p = plot(y = get_max(12:100), x = 12:100, Geom.line)
+draw(PNG("plot.png", 5inch, 5inch), p)
+draw(PNG("plot.png", 5inch, 5inch), plot(y = get_max(12:100), x = 12:100, Geom.line))
+draw(y = get_max(12:100), x = 12:100, Geom.line)
+?draw
+?plot
+
+set_default_plot_size(7inch, 6inch)
+plot(y = get_max(12:2:100), x = 12:100, Geom.line)
+plot(y = get_max(12:2:50), x = 12:2:50, Geom.line)
+cond(rand(Normal(), 5, 10))
+cond(rand(Normal(), 10, 5))
+ivn
+ivn
+inv
+?inv
+plot(y = get_max(12:2:50), x = 12:2:50, Geom.line)
+plot(y = get_max(12:2:100), x = 12:2:100, Geom.line)
+plot(y = get_max(15:5:500), x = 15:5:500, Geom.line)
+plot(y = get_max(15:5:500, TDist(2)), x = 15:5:500, Geom.line)
+plot(y = get_max(15:5:500, TDist(2)), x = 15:5:500, Geom.line)
+plot(y = get_max(10:2:100, TDist(2)), x = 10:2:100, Geom.line)
+plot(y = get_max(10:2:100, Cauchy(), x = 10:2:100, Geom.line)
+plot(y = get_max(10:2:20, Cauchy(), x = 10:2:20, Geom.line)
+kl_divergence
+KLDivergenec()
+KLDivergence()
+evaluate(KLDivergence(), rand(Normal(), 1000), rand(Cauchy(), 1000))
+x /= 10
+x = rand(12)
+x /= sum(x)
+?Normal()
+pdf
+?pdf
+x -> 5
+Student
+StudentTDist
+TDist
+TDist()
+TDist(2)
+rand(10)
+rand(100)
+pdf(Normal(), 0)
+pdf(Normal(), -2)
+zip
+zip(robbers, sample)
+(a,b) = zip(robbers, sample)
+s
+a
+b
+[a for (a,b) in zip(robbers, sample)]
+[b for (a,b) in zip(robbers, sample)]
+Histogram
+using StatsBase
+Histogram
+fist(Histogram, robbers)
+fit(Histogram, robbers)
+ecdf(robbers)
+fit(Histogram, robbers)(1)
+f = ecdf(Histogram, robbers)
+f = ecdf(robbers)
+f(1)
+f(0)
+Pkg.add('ForwardDiff')
+Pkg.add("ForwardDiff")
+using ForwardDiff
+gradient
+gradient(ecdf(robbers))
+ForwardDiff.gradient
+ForwardDiff.gradient(ecdf(robbers))
+Calculus
+Calculus.gradient
+Calculus.gradient(ecdf(robbers))
+new_pdf(0)
+Calculus.gradient(ecdf(robbers))
+Calculus.gradient(ecdf(robbers))()
+Calculus.gradient(ecdf(robbers))(0)
+ForwardDiff.gradient(ecdf(robbers))
+ForwardDiff.derivative(ecdf(robbers), 0)
+ForwardDiff.derivative(ecdf(robbers), 1)
+ForwardDiff.derivative(ecdf(robbers), 1)
+ecdf(robbers)(1)
+ecdf(robbers)(0)
+ForwardDiff.derivative(ecdf(robbers), 1)
+ForwardDiff.gradient(ecdf(robbers), 1)
+Calculus.derivative(ecdf(robbers))
+Calculus.derivative(ecdf(robbers))(1)
+Calculus.derivative(ecdf(robbers))(0)
+ecdf(robbers)
+?ecdf(robbers)
+e = ecdf(robbers)
+?e
+using KernelDensity
+InterpKDE
+robbers
+kde(robbers)
+kde(robbers)(0)
+pdf(kde(robbers))
+pdf(kde(robbers), 0)
+pdf(kde(robbers), 1)
+pdf(kde(robbers), -1)
+InterpKDE(kde(robbers))
+pdf_one(0)
+pdf_one(1)
+pdf_one(-1)
+resample()
+resample(1000)
+resample(10000)
+resample(1000, 100)
+pdf(Normal(), 2)
+pdf(Normal(), 2) > rand()
+pdf(Normal(), 2) > rand()
+pdf(Normal(), 2) > rand()
+pdf(Normal(), 2) > rand()
+pdf(Normal(), 2) > rand()
+pdf(Normal(), 2) > rand()
+rand()
+rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+pdf(Normal(), 0) > rand()
+resample(10000, 2)
+resample(10000, 1)
+resample(10000, 2)
+resample(10000, 3)
+resample(10000, 4)
+sample()
+sample
+using StatsBase
+sample
+sample
+sample
+using KernelDensity
+s
+zip(x, population)
+collect(zip(x, population))
+sample(collect(zip(x, population)))
+(1,2)
+(1,2)[1]
+resample(100000, 100)
+count = 5
+count--
+--count
+count =1
+count -1
+count
+count
+count -1
+count
+count
+count - 1
+resample(100, 2)
+resample(100, 2)
+catch_and_estimate(population, Normal())
+(caught, estimate) =catch_and_estimate(population, Normal())
+caught
+estimate
+resample(100, 2)
+b = (a,b) -> print(b)
+b
+b((1,2))
+resample(100, 2)
+(1,2)[2]
+resample(100, 2)
+resample(10000, 2)
+resample(1000000, 10)
+resample(1000000, 20)
+resample(100000, 20)
+plot(x = caught, Geom.histogram(density = true))
+caught
+caught
+badguys
+kde(caught)
+plot(kde(caught), -5, 5)
+plot(x -> kde(caught)(x), -5, 5)
+plot(x -> pdf(kde(caught),x), -5, 5)
+caught, estimate = catch_and_estimate(population, Normal())
+caught
+estimate
+n
+estimate = interpKDE(kde(caught))
+estimate = InterpKDE(kde(caught))
+caught, estimate = catch_and_estimate(population, estimate)
+caught
+estimate = InterpKDE(kde(caught))
+caught, estimate = catch_and_estimate(population, estimate)
+caught
+caught, estimate = catch_and_estimate(population, estimate)
+estimate = InterpKDE(kde(caught))
+caught
+caught, estimate = catch_and_estimate(population, estimate)
+estimate = InterpKDE(kde(caught))
+caught
+estimate = InterpKDE(kde(caught))
+caught, estimate = catch_and_estimate(population, estimate)
+caught
+estimate = InterpKDE(kde(caught))
+caught, estimate = catch_and_estimate(population, estimate)
+caught
+size
+len
+length
+MixtureModel
+MixtureModel(Normal[Normal(), Normal(3)])
+Normal()
+boolean
+Boolean
+set_default_plot_size(9inch, 7inch)

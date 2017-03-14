@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mathtools,amsfonts,amssymb,amsmath, bm,commath,multicol}
+\usepackage{algorithmicx, tkz-graph, algorithm, fancyhdr}
+
+\usepackage[noend]{algpseudocode}
+
+
+
+\begin{document}
+
+\section{}
+We prove:
+$$
+|m - M| \leq \sqrt{2}\sigma
+$$
+By using Chebyshev's inequality along with the fact that standard deviation, $\sigma$, is the square root of the variance:
+\begin{align*}
+P(| X - \mathbb{E}[X]| \geq a) &\leq \frac{var[X]}{a^2} \\
+P(| X - \mathbb{E}[X]| \geq \sqrt{2}\sigma) &\leq \frac{\sigma^2}{(\sqrt{2}\sigma)^2} \\
+P(| X - \mathbb{E}[X]| \geq \sqrt{2}\sigma) &\leq \frac{1}{2}
+\end{align*}
+For a random continuous variable, the median is defined as the point at which the probability of a a realization being greater is exactly one half (the middle of the distribution!). If the probability of any random variable being more than $\sqrt{2}\sigma$ from the mean is less than one half, and the median is the point at which all points greater are have probability 1/2 or less, than the median cannot be more than $\sqrt{2}\sigma$ from the mean!
+
+\section{}
+Using the exponent rules $e^x \geq 1 + x$ and the provided $e^-x \leq 1 - x + \frac{x^2}{2}$, we work some magic after multiplying both sides of the inequality in our original probability by -1, so that we can apply Markov's rule, and assuming continuity so that $p(x > y) = p(x \geq y)$:
+\begin{align*}
+p\bigg( \frac{-1}{n} \sum X_i > t - m \bigg) &\leq \frac{ \mathbb{E}[ \frac{-1}{n} \sum X_i] }{t-m} \\
+p\bigg( e^{{\frac{-\lambda}{n} \sum X_i}} > e^{\lambda(t - m)} \bigg) &\leq \frac{ \mathbb{E}[ e^{\frac{-\lambda}{n} \sum X_i} ] }{e^{\lambda(t-m)}} \\
+&\leq \frac{ \mathbb{E}[e^{\frac{-\lambda}{n} X_i}]^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \mathbb{E}[1 + \frac{\lambda^2X_1^2}{2n^2} - \frac{\lambda X_1}{n^2}]^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \bigg( 1 + \frac{\lambda^2a^2}{2n^2} - \frac{\lambda m}{n^2} \bigg)^n}{e^{\lambda(t-m)}} \\
+&\leq \frac{ \bigg( \exp{ \bigg\{ \frac{\lambda^2a^2}{2n^2} - \frac{\lambda m}{n} \bigg\}} \bigg)^n}{e^{\lambda(t-m)}} \\
+&\leq \exp{ \bigg\{ \frac{\lambda^2a^2}{2n} - \lambda m  - \lambda(t - m)\bigg\} } \\
+&\leq \exp{ \bigg\{ \frac{\lambda^2a^2}{2n} - \lambda t  \bigg\} } \\
+\end{align*}
+Here we minimize with respect to $\lambda$:
+\begin{align*}
+\frac{\lambda a^2}{n} - t &= 0 \\
+\lambda &= \frac{tn}{a^2}
+\end{align*}
+Plugging this back into our equation we solve:
+\begin{align*}
+p\bigg( \frac{1}{n} \sum X_i < m - t \bigg) &\leq \exp{ \bigg\{ \frac{t^2n^2a^2}{2na^4} -  \frac{t^2n}{a^2}  \bigg\} } \\
+&\leq \exp{ \bigg\{ \frac{nt^2}{2a^2} -  \frac{nt^2}{a^2}  \bigg\} } \\
+&\leq \exp{ \bigg\{  - \frac{nt^2}{2a^2}  \bigg\} } \\
+\end{align*}
+
+
+\end{document}

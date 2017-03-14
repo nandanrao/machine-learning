@@ -1,0 +1,213 @@
+rep
+repeat
+?repeat
+plot(x=1:4, y = fill(.5, 4), Geom.bar)
+using Weave
+weave("problemset.tex", doctyp="tex", informat="noweb")
+weave("weave-test.jnw", doctyp="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="texminted", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+weave("weave-test.jnw", doctype="tex", informat="noweb", latexcmd="pdflatex")
+weave("weave-test.jnw", doctype="tex", informat="noweb", latex_cmd="pdflatex")
+weave("weave-test.jnw", doctype="tex", informat="noweb", latex_cmd="pdflatex")
+weave("weave-test.jnw", doctype="tex", informat="noweb")
+matrix
+array
+rand(3,3)
+a = rand(3,3)
+b = rand(3,1)
+a = rand(3,1)
+a*b
+a*b'
+b*a'
+(b*a')'
+(b*a')' == a*b'
+rand()
+nums = rand(n,d)
+nums[0]
+nums[1]
+nums[1, 1]
+nums[1, ]
+nums[1, :]
+nums[:,]
+nums[:,1]
+rand(n) > nums[:,1]
+rand(n) .> nums[:,1]
+[i > j for i,j in rand(n) .> nums[:,1]]
+ip
+zip
+zip(rand(n), rand(n))
+[i + j for i,j in zip(rand(n), rand(n))]
+[i + j for (i,j) in zip(rand(n), rand(n))]
+draw_sets(10, 3)
+X = rand(n,d)
+y = [i > j ? 1 : 0 for (i,j) in zip(rand(n), X[1,:])]
+zip(rand(n), X[1,:])
+[i + j for (i,j) in zip(rand(n), X[1,:])]
+X
+X[1,:]
+X[1;:]
+X[:,1]
+draw_sets(10, 3)
+sets = draw_sets(1000, 4)
+sets
+sets[1]
+plot(x = sets[0][:,1], y = sets[1])
+X,y = draw_sets(100, 4)
+plot(x = X[:,1], y = y)
+X,y = draw_sets(100, 4)
+plot(x = X[:,1], y = y)
+plot(x = X[:,1], y = y, Geom.histogram)
+X,y = draw_sets(1000, 4)
+plot(x = X[:,1], y = y, Geom.histogram)
+X,y = draw_sets(10000, 2)
+plot(x = X[:,1], y = y, Geom.histogram)
+plot(x = X[:,1], y = y)
+pairwise(Euclidean, X)
+pairwise(Euclidean(), X)
+pairwise(Euclidean(), X')
+distances = pairwise(Euclidean(), X')    
+?minimum
+?min
+x = X[1,:]
+ distances[1,:]
+[distances[1,:] y]
+sortperm(distances)
+sortperm(distances[:,1])
+b = [distances[1,:] y]
+sort(b, 1)
+sort(b, 1)[1:3,:]
+sort(b, 1)[1:3,2]
+mean
+mean(y)
+mean(y) > .5
+round
+round(mean(y))
+distances
+[i + 5 for i in distances]
+map(x -> x[1], dimensions)
+map(x -> x[1], distances)
+5[1]
+map(x -> x[2], distances)
+X,y = draw_sets(100, 3)
+distances = pairwise(Euclidean(), X')
+[mean(distances[1,:]) for i in 1:length(distances)]
+[max(distances[1,:]) for i in 1:length(distances)]
+[maximum(distances[1,:]) for i in 1:length(distances)]
+distances
+get_neighbor(X[2,:], y, 3)
+X
+y
+get_neighbor(distances[3,:], y, 3)
+get_neighbor(distances[3,:], y, 10)
+get_neighbor(distances[3,:], y, 100)
+get_neighbor(distances[3,:], y, 100)
+get_neighbor(distances[3,:], y, 10)
+get_neighbor(distances[3,:], y, 10)
+get_neighbor(distances[3,:], y, 10)
+get_neighbor(distances[3,:], y, 20)
+get_neighbor(distances[20,:], y, 20)
+get_neighbor(distances[90,:], y, 20)
+get_neighbor(distances[90,:], y, 20)
+?sort
+[1,2,5]
+y[1,2,5]
+getindex(y, [1,2,5])
+y
+getindex(y, [1,3,5])
+get_neighbor(distances[90,:], 20)
+get_neighbor(distances[90,:], 20)
+get_neighbor(distances[90,:], 20)
+classify(X, y, 3)
+classify(X, y, 3)
+distances
+nrows(distances)
+nrow(distances)
+rowvals(distances)
+[i for i in eachindex(dimensions)]
+[i for i in eachindex(distances)]
+size(distances)
+size(distances)[1]
+classify(X, y, 3)
+classify(X, y, 3)
+classify(X, y, 3)
+classify(X, y, 3)
+classify(X, y, 3)
+classify(X, y, 3)
+classify(X, y, 3)
+runs(3, 100, 2, 1)
+runs(5, 100, 2, 1)
+runs(5, 100, 2, 1)
+runs(5, 100, 2, 1)
+runs(20, 100, 2, 1)
+runs(20, 100, 2, 5)
+mean(runs(20, 100, 2, 5))
+mean(runs(20, 100, 2, 1))
+mean(runs(20, 100, 2, 10))
+mean(runs(20, 100, 2, 20))
+mean(runs(20, 1000, 2, 20))
+mean(runs(20, 1000, 2, 5))
+mean(runs(20, 1000, 2, 1))
+mean(runs(20, 1000, 2, 3))
+mean(runs(20, 1000, 2, 3))
+plotter([1,3], 10, 100, 3)
+plotter([1,3], 10, 100, 3)[1]
+hcat(plotter([1,3], 10, 100, 3)[1])
+hcat(plotter([1,3], 10, 100, 3))
+p = plotter([1,3], 10, 100, 3)
+hcat(p[1], p[2])
+vcat(p[1], p[2])
+vcat(plotter([1,3], 10, 100, 3))
+reduce(a,b -> hcat(a,b), (plotter([1,3], 10, 100, 3)))
+reduce((a,b) -> hcat(a,b), (plotter([1,3], 10, 100, 3)))
+reduce((a,b) -> vcat(a,b), (plotter([1,3], 10, 100, 3)))
+reduce(vcat, (plotter([1,3], 10, 100, 3)))
+reduce(vcat, (plotter([1,3], 10, 100, 3)))
+reduce(vcat, (plotter([1,3,5], 10, 100, 3)))
+plotter([1,3,5], 10, 100, 3)
+plotter([1,3,5], 10, 100, 3)
+plotter([1,3,5], 30, 200, 3)
+plotter([1,3,5], 50, 200, 3)
+plotter([1,3,5], 100, 200, 3)
+plotter([1,3,5], 100, 200, 3)
+plotter([1,3,5], 100, 300, 3)
+plotter([1,3,5], 100, 300, 3)
+plotter([1,3,5,7,9], 30, 500, 3)
+mean_plotter([1,3,5,7,9], 30, 500, 3)
+mean_plotter([1,3,5,7,9], 30, 500, 3)
+plotter([1,3,5,7,9], 30, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 30, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 3)
+plotter([1,3,5,7,9], 50, 500, 6)
+plotter([1,3,5,7,9], 50, 500, 9)
+plotter([1,3,5,7,9], 50, 500, 20)
+plotter([1,3,5,7,9], 50, 500, 50)
+plotter([1,3,5,7,9], 50, 200, 12)
+plotter([1,3,5,7,9], 50, 2000, 12)
+plotter([1,3,5,7,9], 50, 2000, 6)
+plotter([1,3,5,7,9], 50, 2000, 3)
+.25^2
+.25^2+.25
+3*.25^2+.25
+3*(.25^2)+.25
+3*(.25^2)+1/6
+weave("two.jnw", doctype="tex", informat="noweb")
+using Weave
+weave("two.jnw", doctype="tex", informat="noweb")
+weave("two.jnw", doctype="tex", informat="noweb")
